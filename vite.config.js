@@ -8,15 +8,19 @@ import mkcert from 'vite-plugin-mkcert';
 export default defineConfig(({ mode }) => {
 	const env = loadEnv(mode, process.cwd(), '');
 	return {
-		plugins: [mkcert(), vue(), vueDevTools(), tailwindcss()],
+		plugins: [
+			mkcert(), 
+			vue(), 
+			vueDevTools(),
+			tailwindcss(),
+		],
 		define: {
 			'import.meta.env.STORYBLOK_DELIVERY_API_TOKEN': JSON.stringify(
 				env.STORYBLOK_DELIVERY_API_TOKEN,
 			),
 			'import.meta.env.STORYBLOK_API_BASE_URL': JSON.stringify(
 				env.STORYBLOK_API_BASE_URL,
-			),
-			__VWO_ACCOUNT_ID__: JSON.stringify(env.VWO_ACCOUNT_ID),
+			)
 		},
 	};
 });

@@ -1,12 +1,14 @@
 import { createApp } from 'vue';
 import { StoryblokVue, apiPlugin } from '@storyblok/vue';
 import { createWebHistory, createRouter } from 'vue-router';
-import { initVWO } from './vwo';
+import { init } from 'vwo-fme-node-sdk';
 import './assets/css/main.css';
 import App from './App.vue';
 import Page from './components/Page.vue';
 import Banner from './components/Banner.vue';
+import Cta from './components/Cta.vue';
 import PageView from './PageView.vue';
+import ExperimentationVwo from './components/ExperimentationVwo.vue';
 
 const routes = [
 	{ path: '/', component: PageView },
@@ -34,6 +36,14 @@ app.use(StoryblokVue, {
 
 app.component('Page', Page);
 app.component('Banner', Banner);
-app.use(router).mount('#app');
+app.component('Cta', Cta);
+app.component('ExperimentationVwo', ExperimentationVwo);
 
-initVWO(import.meta.env.VITE_VWO_ACCOUNT_ID);
+const vwoClient = init({
+	accountId: import.meta.env.VITE_VWO_ACCOUNT_ID,
+	sdkKey: import.meta.env.VITE_VWO_SDK_KEY,
+});
+
+app.provide('vwoClient', vwoClient);
+
+app.use(router).mount('#app');

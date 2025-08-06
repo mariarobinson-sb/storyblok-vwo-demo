@@ -1446,6 +1446,11 @@ ms@^2.1.3:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
+murmurhash@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/murmurhash/-/murmurhash-2.0.1.tgz#4097720e08cf978872194ad84ea5be2dec9b610f"
+  integrity sha512-5vQEh3y+DG/lMPM0mCGPDnyV8chYg/g7rl6v3Gd8WMF9S429ox3Xk8qrk174kWhG767KQMqqxLD1WnGd77hiew==
+
 nanoid@^3.3.11:
   version "3.3.11"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.11.tgz#4f4f112cefbe303202f2199838128936266d185b"
@@ -1632,6 +1637,11 @@ superjson@^2.2.2:
   dependencies:
     copy-anything "^3.0.2"
 
+superstruct@^0.14.x:
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/superstruct/-/superstruct-0.14.2.tgz#0dbcdf3d83676588828f1cf5ed35cda02f59025b"
+  integrity sha512-nPewA6m9mR3d6k7WkZ8N8zpTWfenFH3q9pA2PkuiZxINr9DKB2+40wEQf0ixn8VaGuJ78AB6iWOtStI+/4FKZQ==
+
 tailwindcss@4.1.11, tailwindcss@^4.1.11:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.1.11.tgz#799af3e98c19c5baaefafc6e0c16304a0e684854"
@@ -1689,6 +1699,11 @@ update-browserslist-db@^1.1.3:
   dependencies:
     escalade "^3.2.0"
     picocolors "^1.1.1"
+
+uuid@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
+  integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
 
 vite-hot-client@^2.0.4:
   version "2.1.0"
@@ -1778,6 +1793,21 @@ vue@^3.5.13:
     "@vue/runtime-dom" "3.5.17"
     "@vue/server-renderer" "3.5.17"
     "@vue/shared" "3.5.17"
+
+vwo-fme-node-sdk@^1.21.0:
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/vwo-fme-node-sdk/-/vwo-fme-node-sdk-1.21.0.tgz#f95019aaffc43b704837e3b5f266e4c0d95ada07"
+  integrity sha512-pxOOQtEZShQ3ANHZhvFVyrGcpK9bCtACAfk4XpcVB1J98zr6795sV4CkQ4sWQsZaiEB11GlVFFEy4RbzmkdE7Q==
+  dependencies:
+    murmurhash "^2.0.1"
+    superstruct "^0.14.x"
+    uuid "^9.0.1"
+    vwo-fme-sdk-log-messages "^1.*.*"
+
+vwo-fme-sdk-log-messages@^1.*.*:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/vwo-fme-sdk-log-messages/-/vwo-fme-sdk-log-messages-1.2.4.tgz#39fc0ddd279c4c877950715c074b7e7e9a93352e"
+  integrity sha512-hi5PzHLtLH3mxzQ0JBREBwHIROxaxgxabU2d33nNsUrm3vfkcHVDgp4NlDc6PDmDqCQHpU+OGHiMnsSyPWfmXQ==
 
 which@^2.0.1:
   version "2.0.2"

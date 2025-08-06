@@ -13,7 +13,8 @@
     "@tailwindcss/vite": "^4.1.11",
     "tailwindcss": "^4.1.11",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "vwo-fme-node-sdk": "^1.21.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",

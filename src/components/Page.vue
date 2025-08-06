@@ -1,8 +1,15 @@
 <script setup>
-defineProps({blok: Object})
+import JsonDebugger from './JsonDebugger.vue';
+const props = defineProps({ blok: Object });
 </script>
 
 <template>
-	<StoryblokComponent v-for="currentBlok in blok.banner_variation":key="currentBlok._uid" :blok="currentBlok" />
-	<StoryblokComponent v-for="currentBlok in blok.body":key="currentBlok._uid" :blok="currentBlok" />
+	<JsonDebugger :data="blok" title="Component Debug" :collapsed="true" />
+
+	<!-- Body -->
+	<StoryblokComponent
+		v-for="currentBlok in blok.body"
+		:key="currentBlok._uid"
+		:blok="currentBlok"
+	/>
 </template>

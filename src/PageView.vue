@@ -5,7 +5,7 @@ import Navbar from './components/Navbar.vue';
 
 const slug = useRoute().params.slug
 const story = await useStoryblok(`${slug ? slug : 'home'}`, {
-  version: 'draft',
+  version: 'published',
 });
 </script>
 
