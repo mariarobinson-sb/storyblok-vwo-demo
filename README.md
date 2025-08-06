@@ -1,77 +1,112 @@
-# Storyblok Starter Space Blueprint: Vue
+# Storyblok + VWO Feature Management & Experimentation
 
-Integrate [Vue](https://vuejs.org/) with [Storyblok](http://www.storyblok.com) as a headless CMS.
+![Vue 3](https://img.shields.io/badge/Vue-3.x-4FC08D?logo=vue.js&style=flat-square)
+![Vite](https://img.shields.io/badge/Vite-^4.0-646CFF?logo=vite&style=flat-square)
+![Storyblok](https://img.shields.io/badge/Storyblok-CMS-0EA5E9?logo=storyblok&style=flat-square)
+![VWO](https://img.shields.io/badge/VWO-FME--SDK-DD0031?logo=google-optimize&style=flat-square)
 
-This blueprint is ideal for kickstarting new Storyblok and Vue projects. What's inside:
+## Overview
 
-- Pre-configured default blocks: `page`, `teaser`, `grid`, and `feature`.
-- Support for the Visual Editor's live preview.
-- Dynamic routing to fetch and render new stories automatically.
-- Minimal styling.
-
-> [!TIP]
-> Follow our [Vue guide](https://storyblok.com/docs/guides/vue) for a step-by-step walkthrough and learn more about Storyblok's range of features, including rich text rendering, custom content modeling, and internationalization. See the [@storyblok/vue package reference](https://storyblok.com/docs/packages/storyblok-vue) for further information.
-
----
-
-[![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in%20GitHub%20Codespaces-dad4ff.svg?style=for-the-badge&logo=GitHub&logoColor=181717&labelColor=ffffff&color=dad4ff)](https://github.com/codespaces/new?skip_quickstart=true&machine=basicLinux32gb&repo=964225819&ref=main&geo=EuropeWest)
-[![Try Storyblok free](https://img.shields.io/badge/Try%20Storyblok-dad4ff.svg?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTQuNzA3IDIuNTM4aDIyLjUyOXYyMy41ODdINC43MDd6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggZmlsbD0iIzFmMWYxZiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMS43NDMgMi42MDFBMi41OTcgMi41OTcgMCAwIDEgNC4zMzUgMGgyMy4zM2EyLjU5NyAyLjU5NyAwIDAgMSAyLjU5MiAyLjYwMXYyMy40MTFhMi41OTcgMi41OTcgMCAwIDEtMi41OTIgMi42MDJIMTIuNTQ4bC0zLjg3MiAzLjIwOGEuNzcuNzcgMCAwIDEtMS4yNjEtLjU5N3YtMi42MTFoLTMuMDhhMi41OTcgMi41OTcgMCAwIDEtMi41OTItMi42MDJabTUuNjcgMi4xMjdoMTIuNDYyYzIuNjkxIDAgNC44NzMgMi4xOSA0Ljg3MyA0Ljg5IDAgMi4xNjQtMS40IDQtMy4zNDIgNC42NDRhNC44ODcgNC44ODcgMCAwIDEgMy45OSA0LjgxYzAgMi43MDEtMi4xODEgNC44OS00Ljg3MyA0Ljg5SDcuNDEzdi05LjQ1NFptMTAuMzY0IDQuNEgxMS45NXYyLjkzNGg1LjgyOGMuODA4IDAgMS40NjItLjY1NiAxLjQ2Mi0xLjQ2NyAwLS44MS0uNjU0LTEuNDY3LTEuNDYyLTEuNDY3em0tNS44MjggNi41Mmg2LjMxNGMuODk3IDAgMS42MjQuNzMgMS42MjQgMS42MyAwIC45MDEtLjcyNyAxLjYzLTEuNjI0IDEuNjNoLTYuMzE0eiIgY2xpcC1ydWxlPSJldmVub2RkIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjEuNTE3NzUiLz48L3N2Zz4K&labelColor=ffffff)](https://app.storyblok.com/#/signup)
-[![Join the Storyblok Discord community](https://img.shields.io/discord/700316478792138842?style=for-the-badge&logo=discord&label=Join%20our%20community&labelColor=ffffff&color=dad4ff)](https://storyblok.com/join-discord)
+This repository demonstrates a seamless integration between [Storyblok](http://www.storyblok.com) as a headless CMS and [VWO FME (Feature Management & Experimentation)](https://vwo.com) for A/B testing.
 
 ## Get Started
 
-**No Storyblok account yet? [Sign up now](https://app.storyblok.com/#/signup?utm_source=docs) to experience a 14-day free trial of all features and enjoy our completely free Starter plan.**
+### Prerequisites
+- **Storyblok Account**: [Sign up for free](https://app.storyblok.com/#/signup)
+- **VWO Account**: [Start free trial](https://vwo.com/free-trial/)
+- **Node.js**: Version 16 or higher
 
-1. Create an empty new Storyblok space
-2. Create a new repository based on this template
-3. Open the project on your device
-4. Install dependencies
+### Installation
+
+Clone this repository & install dependencies:
 
 ```sh
-npm install
+git clone git@github.com:storyblok/vwo-demo.git
+cd vwo-demo
+yarn install
 ```
 
-### Authentication
+### Configuration
 
-In the root of the project, create a `.env` file to store the Storyblok access token:
+#### Environment Variables
+
+1. Create a `.env` file in the root directory:
 
 ```sh
-STORYBLOK_DELIVERY_API_TOKEN=<REPLACE_WITH_YOUR_TOKEN>
+cp .env.example .env
 ```
 
-> [!IMPORTANT]
-> Copy your space's preview access token from **Settings** > **Access Tokens**.
-> Learn more about Storyblok [access tokens](https://www.storyblok.com/docs/concepts/access-tokens).
+2. Open and fill it with correct values:
 
-### Connect the Visual Editor
-
-To render a preview of the local project in the Visual Editor, follow these steps:
-
-1. Navigate to **Settings > Visual Editor**.
-2. Set the default environment to `https://localhost:5173/`.
-3. Save.
-4. Open the `home` story.
-5. Click **Config**.
-6. Type `/` in the **Real path**.
-
-Run the development server with HTTPS enabled:
 ```sh
-npm run dev
+STORYBLOK_DELIVERY_API_TOKEN=<REPLACE_WITH_PUBLIC_STORYBLOK_TOKEN>
+VITE_VWO_ACCOUNT_ID=<REPLACE_WITH_VWO_ACCOUNT_ID>
+VITE_VWO_SDK_KEY=<REPLACE_WITH_VWO_SDK_KEY>
 ```
 
 > [!IMPORTANT]
-> To connect the Storyblok Visual Editor, the local project must run over HTTPS. Learn more in the [Visual Editor concept](https://www.storyblok.com/docs/concepts/visual-editor#local-development-via-https). See the [Visual Preview part of the Vue guide](https://storyblok.com/docs/guides/vue/visual-preview) for detailed instructions.
+> - Copy your space's **public access token** from **Settings** > **Access Tokens** in your Storyblok space
+> - Get your VWO Account ID and SDK Key from **Settings** > **API Keys** in your VWO dashboard
 
-Back in Storyblok, open the **Home** story to start editing.
+## Story schema
 
-Happy building!
+To have this demo working properly, please be sure to have a story following this structure:
+
+```js
+// Story Object
+
+{
+  "story": {
+    "name": "Demo",
+    [...]
+    "uuid": "f36c7dc5-07b3-4801-9699-11348af688b1",
+    "content": {
+      "_uid": "983137e6-175a-4d0a-be15-2536508fe097",
+      "body": [
+        {
+          "_uid": "60415a25-7583-4cd1-96b1-3380f5ec15d8",
+          "variants": [
+            {
+              "title": "Banner Variant Default",
+              "component": "banner",
+              "vwo_variation": { // VWO Custom Field Type
+                "isForced": false,
+                "isDefault": true,
+                "featureKey": "banner",
+                "featureName": "Banner",
+                "variationKey": "default",
+                "variationName": "Default"
+              }
+            },
+            {
+              "title": "Banner Variant 1",
+              "component": "banner",
+              "vwo_variation": { // VWO Custom Field Type
+                "isForced": false,
+                "isDefault": false,
+                "featureKey": "banner",
+                "featureName": "Banner",
+                "variationKey": "variation1",
+                "variationName": "Variation 1"
+              }
+            }
+          ],
+          "component": "experimentation-vwo" // Nestable component which will contain all the variations to be tested.
+        }
+      ],
+      "component": "page"
+    },
+    "slug": "demo",
+    "full_slug": "demo"
+  }
+}
+```
 
 ## Resources
 
-- To learn more about what you can do with Storyblok, visit [our documentation and learning hub](https://www.storyblok.com/docs).
-- To learn more about Vue, check the [official documentation](https://vuejs.org).
+### Documentation
+- [VWO FME Node.js SDK](https://developers.vwo.com/docs/server-side-sdks/nodejs)
+- [Storyblok Vue Guide](https://storyblok.com/docs/guides/vue)
+- [Feature Flags](https://help.vwo.com/hc/en-us/sections/4405228806169-Feature-Flags)
 
-### Support
-
-- Have questions, need help, want to chat with other users? [Join our Discord community](https://storyblok.com/join-discord).
-- Visit the Storyblok [Help Center](https://support.storyblok.com/hc/en-us).
+*Built with ❤️ using Vue.js, Storyblok, and VWO FME SDK*
