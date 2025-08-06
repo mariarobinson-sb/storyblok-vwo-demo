@@ -12,6 +12,7 @@ This repository demonstrates a seamless integration between [Storyblok](http://w
 ## Get Started
 
 ### Prerequisites
+
 - **Storyblok Account**: [Sign up for free](https://app.storyblok.com/#/signup)
 - **VWO Account**: [Start free trial](https://vwo.com/free-trial/)
 - **Node.js**: Version 16 or higher
@@ -45,6 +46,7 @@ VITE_VWO_SDK_KEY=<REPLACE_WITH_VWO_SDK_KEY>
 ```
 
 > [!IMPORTANT]
+>
 > - Copy your space's **public access token** from **Settings** > **Access Tokens** in your Storyblok space
 > - Get your VWO Account ID and SDK Key from **Settings** > **API Keys** in your VWO dashboard
 
@@ -65,7 +67,7 @@ To have this demo working properly, please be sure to have a story following thi
       "body": [
         {
           "_uid": "60415a25-7583-4cd1-96b1-3380f5ec15d8",
-          "variants": [
+          "variations": [
             {
               "title": "Banner Variant Default",
               "component": "banner",
@@ -105,8 +107,9 @@ To have this demo working properly, please be sure to have a story following thi
 ## Resources
 
 ### Documentation
+
 - [VWO FME Node.js SDK](https://developers.vwo.com/docs/server-side-sdks/nodejs)
 - [Storyblok Vue Guide](https://storyblok.com/docs/guides/vue)
 - [Feature Flags](https://help.vwo.com/hc/en-us/sections/4405228806169-Feature-Flags)
 
-*Built with ❤️ using Vue.js, Storyblok, and VWO FME SDK*
+_Built with ❤️ using Vue.js, Storyblok, and VWO FME SDK_

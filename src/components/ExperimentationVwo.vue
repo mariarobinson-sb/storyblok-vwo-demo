@@ -7,13 +7,13 @@ const vwoClient = await inject('vwoClient');
 
 // Editor preview logic
 const isInEditor = window.location.search.includes('_storyblok');
-const forcedVariants = props.blok.variants.filter(
+const forcedVariants = props.blok.variations.filter(
 	(v) => v.vwo_variation?.isForced === true,
 );
 
 // VWO logic
 const flag = await vwoClient.getFlag(
-	props.blok.variants[0]?.vwo_variation?.featureKey,
+	props.blok.variations[0]?.vwo_variation?.featureKey,
 	{ id: getUserId() },
 );
 const selectedUuid = flag.isEnabled()
@@ -21,15 +21,15 @@ const selectedUuid = flag.isEnabled()
 	: null;
 
 const selectedVariations = computed(() => {
-	// Editor mode: show forced variants
+	// Editor mode: show forced variations
 	if (isInEditor && forcedVariants.length > 0) {
 		return forcedVariants;
 	}
 
 	// Production: VWO logic
 	const variation =
-		props.blok.variants.find((v) => v._uid === selectedUuid) ||
-		props.blok.variants.find((v) => v.vwo_variation?.isDefault);
+		props.blok.variations.find((v) => v._uid === selectedUuid) ||
+		props.blok.variations.find((v) => v.vwo_variation?.isDefault);
 
 	return variation ? [variation] : [];
 });
