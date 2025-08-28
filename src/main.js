@@ -34,10 +34,10 @@ app.use(StoryblokVue, {
 	use: [apiPlugin],
 });
 
-app.component('Page', Page);
-app.component('Banner', Banner);
-app.component('Cta', Cta);
-app.component('ExperimentationVwo', ExperimentationVwo);
+app.component('page', Page);
+app.component('banner', Banner);
+app.component('cta', Cta);
+app.component('experimentation-vwo', ExperimentationVwo);
 
 const vwoClient = init({
 	accountId: import.meta.env.VITE_VWO_ACCOUNT_ID,
